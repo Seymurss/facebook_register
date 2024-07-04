@@ -20,7 +20,10 @@
                 <input type="text" class="lineone" value="First name">
                 <input type="text" class="lineone" value="Last name">
                 <input type="text" class="linetwo" value="Mobile number or email">
-                <input type="text" class="linetwo" value="New password">
+                <input type="password" class="linetwo" id="passwordField" value="New password">
+                <span style="position: absolute;margin-top: 21px;margin-left: -34px;" class="toggle-password" onclick="togglePasswordVisibility()">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
                 <div class="Birtday">
                     <span>Birtday</span>
                     <div class="selectbox">
@@ -72,5 +75,21 @@
             </form>
         </div>
     </div>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("passwordField");
+            var toggleIcon = document.querySelector(".toggle-password i");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
 </body>
 </html>
